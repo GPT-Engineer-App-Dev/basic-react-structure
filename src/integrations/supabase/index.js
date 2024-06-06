@@ -39,6 +39,7 @@ comments // table: comments
 export const useEvents = () => useQuery({
     queryKey: ['events'],
     queryFn: () => fromSupabase(supabase.from('events').select('*')),
+    refetchOnWindowFocus: false,
 });
 
 export const useAddEvent = () => {
